@@ -1,10 +1,27 @@
+from multiverse.brain import Brain
+
+assistant = Brain()
+
 print("=" * 40)
-print("🚀 Welcome to Multiverse AI")
-print("Version : 0.0.1")
-print("Status  : Online")
+print("🚀 Multiverse AI")
 print("=" * 40)
 
-name = input("Enter your name: ")
+while True:
+    user = input("You: ")
 
-print(f"\nHello {name} 👋")
-print("I am Multiverse AI.")
+    if user.lower() == "exit":
+        print("Multiverse: Goodbye! 👋")
+        break
+
+    reply = assistant.think(user)
+    print("Multiverse:", reply)
+
+while True:
+    user = input("You: ")
+
+    if user.lower() == "exit":
+        print("Multiverse: Goodbye! 👋")
+        break
+
+    reply = assistant.think(user)
+    print("Multiverse:", reply)
